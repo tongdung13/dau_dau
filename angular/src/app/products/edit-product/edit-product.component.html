@@ -1,0 +1,49 @@
+
+<hr>
+<div class="container">
+  <form>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <label>Name</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="product.name" formControlName="name">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="productForm.get('name').invalid && productForm.get('name').touched">
+          Invalid Name!
+        </div>
+        <div class="form-group" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <label>Position</label>
+          <input type="text" class="form-control" name="position" [(ngModel)]="product.position" formControlName="position">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="productForm.get('position').invalid && productForm.get('position').touched">
+          Invalid Position!
+        </div>
+        <div class="form-group" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <label>Office</label>
+          <input type="text" class="form-control" name="office" [(ngModel)]="product.office" formControlName="office">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="productForm.get('office').invalid && productForm.get('office').touched">
+          Invalid Office!
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <label>Age</label>
+          <input type="number" class="form-control" name="age" [(ngModel)]="product.age" formControlName="age">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="productForm.get('age').invalid && productForm.get('age').touched">
+          Invalid Age!
+        </div>
+        <div class="form-group" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <label>Start Date</label>
+          <input type="date" class="form-control" name="startDate" [(ngModel)]="product.startDate" formControlName="startDate">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="productForm.get('startDate').invalid && productForm.get('startDate').touched">
+          Invalid Start Date!
+        </div>
+      </div>
+    </div>
+    <button (click)="clickEdit()" class="btn btn-sm btn-outline-success">Update</button>
+  </form>
+</div>
+

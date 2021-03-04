@@ -1,0 +1,31 @@
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.position }}</td>
+        <td>{{ product.office }}</td>
+        <td>{{ product.age }}</td>
+        <td>{{ product.startDate }}</td>
+        <td>
+          <a class="btn btn-sm btn-outline-warning" routerLink="edit/{{ product.id }}">Update</a>
+          <a class="btn btn-sm btn-outline-danger" (click)="clickDelete(product.id)" style="margin-left: 9px;">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
